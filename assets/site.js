@@ -63,14 +63,15 @@
       '<div><h4>Products</h4><a href="acktvt.html">acktvt overview</a><a href="https://acktvt.com" target="_blank" rel="noopener">acktvt.com</a><a href="mailto:acktvt@prowessz.com">acktvt@prowessz.com</a></div>'+
       '<div><h4>Contact</h4><a href="contact.html">Contact page</a><a href="tel:+918080255000">+91 80 80 255 000</a><a href="mailto:sales@prowessz.com">sales@prowessz.com</a></div>'+
     '</div>'+
-    '<div class="footer-bottom"><span>&copy; 2025&ndash;2026 Prowessz Consulting Services LLP · India</span><span>Recognised by DPIIT, Government of India</span></div>'+
+    '<div class="footer-bottom"><span>&copy; 2025&ndash;2026 Prowessz Consulting Services LLP · India</span><span><a href="privacy.html">Privacy notice</a> &nbsp;·&nbsp; <a href="#" class="pz-cookie-link">Cookie settings</a> &nbsp;·&nbsp; Recognised by DPIIT, Government of India</span></div>'+
   '</div>';
 
   function inject(){
     var h = document.getElementById('site-header');
     var f = document.getElementById('site-footer');
     if(h){ h.innerHTML = HEADER; }
-    if(f){ f.innerHTML = FOOTER; }
+    if(f){ f.innerHTML = FOOTER;
+      var ck=f.querySelector('.pz-cookie-link'); if(ck){ ck.addEventListener('click',function(e){ e.preventDefault(); if(window.pzConsent) window.pzConsent.open(); }); } }
 
     var page = window.PROWESSZ_PAGE || document.body.getAttribute('data-page') || '';
     var consultingPages = ['transformation','digital','hr','projects','cyber','msme'];
