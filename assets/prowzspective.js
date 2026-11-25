@@ -35,6 +35,12 @@
   var box = document.getElementById('nl-box'); if (!box) return;
   var q = new URLSearchParams(location.search), id = q.get('id'), t = q.get('t'), mode = box.getAttribute('data-mode');
   var show = function (title, text) { box.querySelector('h1').textContent = title; box.querySelector('.msg').textContent = text; var b = box.querySelector('.go'); if (b) b.remove(); };
+  // a test or preview copy from the console carries no personal link (0109)
+  if (q.get('preview') === '1') {
+    show(mode === 'confirm' ? 'This is a test copy' : 'This is a test copy of Prowzspective',
+      'A test e-mail is not addressed to a subscriber, so this link cannot unsubscribe anyone. In the issue subscribers receive, this link carries their own details and unsubscribes them with one click.');
+    return;
+  }
   if (!id || !t) { show('This link is incomplete', 'Please open the link exactly as it appears in the e-mail.'); return; }
   if (mode === 'confirm') {
     ready(function () {
