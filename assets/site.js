@@ -19,6 +19,29 @@
     ["msme.html","msme","MSME Advisory","Big-4-grade consulting sized and priced for growing businesses."]
   ];
 
+  // Nov 2026: "Products" menu (was the single "acktvt" link): the two suites and three companions.
+  var PICON = {
+    bms:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3.5" y="4" width="17" height="16" rx="2"/><path d="M3.5 9h17M9 9v11"/></svg>',
+    dps:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l7 3v5c0 5-3.2 8-7 10-3.8-2-7-5-7-10V6z"/><rect x="9" y="10.5" width="6" height="5" rx="1"/><path d="M10.2 10.5V9a1.8 1.8 0 013.6 0v1.5"/></svg>',
+    meet:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="6.5" width="12.5" height="11" rx="2"/><path d="M15.5 10.5l5-3v9l-5-3z"/></svg>',
+    genuine:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 3.5h7l4 4V20a.5.5 0 01-.5.5h-10.5a.5.5 0 01-.5-.5V4a.5.5 0 01.5-.5z"/><path d="M9 13l2 2 4-4"/></svg>',
+    origin:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><path d="M14 14h2v2h-2zM18 18h2v2h-2zM14 18h2M18 14h2"/></svg>',
+    all:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="7" cy="7" r="2.5"/><circle cx="17" cy="7" r="2.5"/><circle cx="7" cy="17" r="2.5"/><circle cx="17" cy="17" r="2.5"/></svg>'
+  };
+  var PRODUCTS = [
+    ["acktvt.html#bms","bms","acktvt Business Management Suite","Order to cash for growing manufacturers and traders."],
+    ["acktvt.html#dps","dps","acktvt Data Protection Suite","India's DPDP Act as registers, clocks and evidence."],
+    ["acktvt.html#meet","meet","acktvt Meet","Video meetings, opened from the record you are working on."],
+    ["acktvt.html#genuine","genuine","acktvt Genuine","Documents and certificates anyone can check."],
+    ["acktvt.html#origin","origin","acktvt Origin","Show buyers where your product came from."],
+    ["acktvt.html","all","All products & security","The acktvt line-up by Prowessz Consulting."]
+  ];
+  function productsHTML(){
+    return PRODUCTS.map(function(p){
+      return '<a href="'+p[0]+'"><span class="ic">'+PICON[p[1]]+'</span><span><span class="t">'+p[2]+'</span><span class="d">'+p[3]+'</span></span></a>';
+    }).join('');
+  }
+
   function megaHTML(){
     return PILLARS.map(function(p){
       return '<a href="'+p[0]+'"><span class="ic">'+ICON[p[1]]+'</span><span><span class="t">'+p[2]+'</span><span class="d">'+p[3]+'</span></span></a>';
@@ -34,7 +57,7 @@
     '<button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>'+
     '<ul class="nav-links">'+
       '<li data-key="consulting" class="has-mega"><a class="top-link" href="transformation.html" data-mega-toggle>Consulting</a><div class="mega">'+megaHTML()+'</div></li>'+
-      '<li data-key="acktvt"><a class="top-link" href="acktvt.html">acktvt</a></li>'+
+      '<li data-key="acktvt" class="has-mega"><a class="top-link" href="acktvt.html" data-mega-toggle>Products</a><div class="mega">'+productsHTML()+'</div></li>'+
       '<li data-key="about"><a class="top-link" href="about.html">About</a></li>'+
       '<li data-key="leadership"><a class="top-link" href="leadership.html">Leadership</a></li>'+
       '<li data-key="research"><a class="top-link" href="research.html">Research</a></li>'+
@@ -49,7 +72,8 @@
       '<div class="footer-brand">'+
         '<img class="footer-logo" src="assets/images/logo-header-gold.png" alt="Prowessz Consulting">'+
         '<b>Catalyst in your Business™</b>'+
-        '<p>A Management &amp; Technology consulting firm recognised by DPIIT, Government of India.</p>'+
+        '<p>A Management &amp; Technology consulting firm recognised by DPIIT, Government of India, and the company behind acktvt business software.</p>'+
+        '<p class="pz-nl-foot"><a href="prowzspective/">Subscribe to <b>Prowzspective</b> →</a><br><span>Our monthly newsletter for business leaders</span></p>'+
         '<div class="social-row">'+
         '<a href="https://www.linkedin.com/in/prowessz-consulting/" aria-label="LinkedIn" target="_blank" rel="noopener"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 11.02 5 2.5 2.5 0 01-.02-5zM3 8.98h4v12H3v-12zm7 0h3.8v1.64h.05c.53-1 1.83-1.98 3.77-1.98 4.03 0 4.78 2.65 4.78 6.1v6.24h-4v-5.53c0-1.32-.02-3-1.84-3-1.85 0-2.13 1.44-2.13 2.92v5.61h-4v-12z"/></svg></a>'+
         '<a href="https://www.instagram.com/prowesszconsulting/" aria-label="Instagram" target="_blank" rel="noopener"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5"/><circle cx="12" cy="12" r="3.6"/><circle cx="17" cy="7" r="1"/></svg></a>'+
@@ -60,7 +84,7 @@
       '</div>'+
       '<div><h4>Consulting</h4><a href="transformation.html">Transformation</a><a href="digital.html">Digital &amp; IT</a><a href="human-resources.html">Human Resources</a><a href="projects.html">Projects</a><a href="cyber-security.html">Cyber Security</a><a href="msme.html">MSME Advisory</a></div>'+
       '<div><h4>Firm</h4><a href="about.html">About us</a><a href="leadership.html">Leadership</a><a href="research.html">Research</a><a href="associations-media.html">Associations &amp; Media</a><a href="join-us.html">Careers</a></div>'+
-      '<div><h4>Products</h4><a href="acktvt.html">acktvt overview</a><a href="https://acktvt.com" target="_blank" rel="noopener">acktvt.com</a><a href="mailto:acktvt@prowessz.com">acktvt@prowessz.com</a></div>'+
+      '<div><h4>Products</h4><a href="acktvt.html">acktvt products</a><a href="https://acktvt.com/bms/features/" target="_blank" rel="noopener">BMS features</a><a href="https://acktvt.com/dps/features/" target="_blank" rel="noopener">DPS features</a><a href="acktvt.html#security">Security standards</a><a href="https://acktvt.com" target="_blank" rel="noopener">acktvt.com</a></div>'+
       '<div><h4>Contact</h4><a href="contact.html">Contact page</a><a href="tel:+918080255000">+91 80 80 255 000</a><a href="mailto:sales@prowessz.com">sales@prowessz.com</a></div>'+
     '</div>'+
     '<div class="footer-bottom"><span>&copy; 2025&ndash;2026 Prowessz Consulting Services LLP · India</span><span><a href="privacy.html">Privacy notice</a> &nbsp;·&nbsp; <a href="#" class="pz-cookie-link">Cookie settings</a> &nbsp;·&nbsp; Recognised by DPIIT, Government of India</span></div>'+
@@ -90,15 +114,14 @@
         toggle.setAttribute('aria-expanded', open ? 'true':'false');
       });
     }
-    var megaToggle = document.querySelector('[data-mega-toggle]');
-    if(megaToggle){
+    document.querySelectorAll('[data-mega-toggle]').forEach(function(megaToggle){
       megaToggle.addEventListener('click', function(e){
         if(window.matchMedia('(max-width:960px)').matches){
           e.preventDefault();
           megaToggle.closest('li').classList.toggle('is-expanded');
         }
       });
-    }
+    });
 
     var header = document.querySelector('.site-header');
     if(header){
@@ -127,4 +150,7 @@
   if(document.readyState === 'loading'){
     document.addEventListener('DOMContentLoaded', inject);
   } else { inject(); }
+
+  // Nov 2026: page-view counts for the acktvt Console (counts only; see assets/visits.js and the privacy notice)
+  try { var vs = document.createElement('script'); vs.src = (document.querySelector('base') ? '/' : '') + 'assets/visits.js'; vs.defer = true; document.head.appendChild(vs); } catch (e) {}
 })();

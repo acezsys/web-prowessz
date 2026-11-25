@@ -326,3 +326,32 @@ a.pillar-card:hover p,a.pillar-card:hover .go,a.pillar-card:hover .num{color:inh
 .page-hero .btn--ghost-dark{border-color:var(--ink); color:var(--ink)}
 .page-hero .btn--ghost-dark:hover{background:var(--ink); color:var(--paper)}
 .footer-grid .social-row a{display:flex; padding:0}
+
+/* Nov 2026: private visit badge (only in browsers that opened the console's private link) */
+.pz-badge{position:fixed;left:14px;bottom:14px;z-index:60;font-size:12px;line-height:1;padding:8px 11px;border-radius:999px;background:rgba(15,30,68,.86);color:#fff;letter-spacing:.2px;box-shadow:0 4px 14px rgba(0,0,0,.18);opacity:.82}
+.pz-badge:hover{opacity:1}
+/* Nov 2026: Prowzspective sign-up */
+.pz-nl-foot{margin-top:14px;font-size:.9rem}
+.pz-nl-foot a{color:var(--gold, #E2B34C)}
+.pz-nl-foot span{font-size:.8rem;opacity:.75}
+.nl-card{display:grid;grid-template-columns:1.05fr 1fr;gap:34px;align-items:start;background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:34px;box-shadow:var(--shadow)}
+.nl-card h2{margin:6px 0 10px}
+.nl-card .lede{margin:0 0 12px}
+.nl-card ul{margin:12px 0 0;padding-left:18px;color:var(--mut);line-height:1.6;font-size:.95rem}
+.nl-form{display:grid;gap:12px}
+.nl-form label{display:grid;gap:5px;font-size:.84rem;font-weight:700}
+.nl-form input[type=text],.nl-form input[type=email]{font:inherit;font-weight:400;padding:11px 13px;border:1px solid var(--line);border-radius:10px;background:var(--paper);color:var(--ink)}
+.nl-form .row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.nl-form .consent{display:flex;gap:10px;align-items:flex-start;font-weight:400;font-size:.84rem;color:var(--mut);line-height:1.5}
+.nl-form .consent input{margin-top:3px;flex:none;width:16px;height:16px}
+.nl-form .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.nl-form .err{color:#b42318;font-size:.86rem;min-height:1em}
+.nl-done{display:none;padding:18px;border-radius:12px;background:var(--soft);font-size:.95rem;line-height:1.6}
+.nl-done b{display:block;font-size:1.05rem;margin-bottom:4px}
+@media (max-width:860px){.nl-card{grid-template-columns:1fr;padding:22px}.nl-form .row2{grid-template-columns:1fr}}
+/* Nov 2026: Products page lists */
+.pz-ticks{list-style:none;margin:12px 0 0;padding:0;display:grid;gap:9px}
+.pz-ticks li{position:relative;padding-left:22px;color:var(--mut);font-size:.93rem;line-height:1.55}
+.pz-ticks li::before{content:"";position:absolute;left:2px;top:.55em;width:9px;height:9px;border-radius:2px;background:var(--gold)}
+.pz-ticks li b{color:var(--ink)}
+@media(min-width:900px){.pz-ticks--2{grid-template-columns:1fr 1fr;column-gap:34px}}
